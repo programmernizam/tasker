@@ -1,20 +1,12 @@
 import { useState } from "react";
 import AddTaskModal from "./AddTaskModal";
+import EmptyTask from "./EmptyTask";
 import SearchBox from "./SearchBox";
 import TaskAction from "./TaskAction";
 import TaskList from "./TaskList";
 
 export default function TaskBoard() {
-  const defaultTask = {
-    id: crypto.randomUUID(),
-    title: "Learn React",
-    description:
-      "I want to learn React such than I can treat it like I can treat it like I can treat it like I can treat it like",
-    tags: ["web", "react", "js"],
-    priority: "high",
-    isFavorite: false,
-  };
-  const [tasks, setTasks] = useState([defaultTask]);
+  const [tasks, setTasks] = useState([]);
   const [showAddModal, setShowAddModal] = useState(false);
   const [taskUpdate, setTaskUpdate] = useState(null);
 
@@ -88,12 +80,16 @@ export default function TaskBoard() {
             onAddClick={() => setShowAddModal(true)}
             onDeleteAllClick={handleAllDeleteTask}
           />
-          <TaskList
-            tasks={tasks}
-            onEdit={handleEditTask}
-            onDelete={handleDeleteTask}
-            onFav={handleFavorite}
-          />
+          {tasks.length > 0 ? (
+            <TaskList
+              tasks={tasks}
+              onEdit={handleEditTask}
+              onDelete={handleDeleteTask}
+              onFav={handleFavorite}
+            />
+          ) : (
+            <EmptyTask />
+          )}
         </div>
       </div>
     </section>
