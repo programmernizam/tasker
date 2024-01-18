@@ -8,6 +8,15 @@ export default function AddTaskModal() {
     priority: "",
     isFavorite: false,
   });
+  const handleChange = (e) => {
+    e.preventDefault;
+    const name = e.target.name;
+    let value = e.target.value;
+    setTask({
+      ...task,
+      [name]: value,
+    });
+  };
   return (
     <>
       <div className="bg-black bg-opacity-70 h-full w-full z-10 absolute top-0 left-0"></div>
