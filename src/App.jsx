@@ -1,12 +1,11 @@
-import { Fragment } from "react";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 
 export default function App() {
   return (
-    <Fragment>
+    <main className="bg-[#191D26] font-[Inter] text-white">
       <Navbar />
       <HeroSection />
-    </Fragment>
+    </main>
   );
 }
