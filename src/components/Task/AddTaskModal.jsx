@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default function AddTaskModal({ onSave }) {
   const [task, setTask] = useState({
+    id: crypto.randomUUID(),
     title: "",
     description: "",
     tags: [],
@@ -9,7 +10,7 @@ export default function AddTaskModal({ onSave }) {
     isFavorite: false,
   });
   const handleChange = (e) => {
-    e.preventDefault;
+    e.preventDefault();
     const name = e.target.name;
     let value = e.target.value;
     if (name === "tags") {
