@@ -1,13 +1,15 @@
 import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
+import TaskBoard from "./components/TaskBoard";
 
 export default function App() {
   return (
-    <main className="bg-[#191D26] font-[Inter] text-white">
+    <>
       <Navbar />
       <HeroSection />
+      <TaskBoard />
       <Footer />
-    </main>
+    </>
   );
 }

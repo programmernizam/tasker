@@ -4,7 +4,7 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between gap-x-6">
         {/* <!-- Logo --> */}
         <a href="/">
-          <h1 className="text-white font-bold text-3xl">TASKER</h1>
+          <h1 className="font-bold text-3xl">TASKER</h1>
         </a>
         {/* <!-- Logo Ends --> */}
       </div>
