@@ -42,10 +42,20 @@ export default function TaskBoard() {
     setShowAddModal(true);
   };
 
+  // Handle Close Click
+  function handleCloseClick() {
+    setShowAddModal(false);
+    setTaskUpdate(null);
+  }
+
   return (
     <section className="mb-20" id="tasks">
       {showAddModal && (
-        <AddTaskModal onSave={handleAddTask} taskUpdate={taskUpdate} />
+        <AddTaskModal
+          onSave={handleAddTask}
+          taskUpdate={taskUpdate}
+          onCloseClick={handleCloseClick}
+        />
       )}
       <div className="container mx-auto">
         <SearchBox />
