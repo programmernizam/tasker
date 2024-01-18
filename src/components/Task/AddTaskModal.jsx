@@ -15,7 +15,6 @@ export default function AddTaskModal({ onSave, taskUpdate }) {
   const [isAdd, setIsAdd] = useState(Object.is(taskUpdate, null));
 
   const handleChange = (e) => {
-    e.preventDefault();
     const name = e.target.name;
     let value = e.target.value;
     if (name === "tags") {

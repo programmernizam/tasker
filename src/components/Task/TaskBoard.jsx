@@ -11,12 +11,12 @@ export default function TaskBoard() {
     description:
       "I want to learn React such than I can treat it like I can treat it like I can treat it like I can treat it like",
     tags: ["web", "react", "js"],
-    priority: "High",
+    priority: "high",
     isFavorite: false,
   };
   const [tasks, setTasks] = useState([defaultTask]);
   const [showAddModal, setShowAddModal] = useState(false);
-  const [taskUpdate, setTaskUpdate] = useState();
+  const [taskUpdate, setTaskUpdate] = useState(null);
 
   // Add Task Handler
   const handleAddTask = (newTask, isAdd) => {
