@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function AddTaskModal() {
+export default function AddTaskModal({ onSave }) {
   const [task, setTask] = useState({
     title: "",
     description: "",
@@ -12,6 +12,9 @@ export default function AddTaskModal() {
     e.preventDefault;
     const name = e.target.name;
     let value = e.target.value;
+    if (name === "tags") {
+      value = value.split(",");
+    }
     setTask({
       ...task,
       [name]: value,
@@ -85,6 +88,7 @@ export default function AddTaskModal() {
           <button
             type="submit"
             className="rounded bg-blue-600 px-4 py-2 text-white transition-all hover:opacity-80"
+            onClick={() => onSave(task)}
           >
             Create new Task
           </button>
