@@ -6,24 +6,19 @@ export default function TaskList() {
           <tr>
             <th className="p-4 pb-8 text-sm font-semibold capitalize w-[48px]"></th>
             <th className="p-4 pb-8 text-sm font-semibold capitalize w-[300px]">
-              {" "}
-              Title{" "}
+              Title
             </th>
             <th className="p-4 pb-8 text-sm font-semibold capitalize w-full">
-              {" "}
-              Description{" "}
+              Description
             </th>
             <th className="p-4 pb-8 text-sm font-semibold capitalize md:w-[350px]">
-              {" "}
-              Tags{" "}
+              Tags
             </th>
             <th className="p-4 pb-8 text-sm font-semibold capitalize md:w-[100px]">
-              {" "}
-              Priority{" "}
+              Priority
             </th>
             <th className="p-4 pb-8 text-sm font-semibold capitalize md:w-[100px]">
-              {" "}
-              Options{" "}
+              Options
             </th>
           </tr>
         </thead>
