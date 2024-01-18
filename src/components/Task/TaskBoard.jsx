@@ -16,6 +16,7 @@ export default function TaskBoard() {
   };
   const [tasks, setTasks] = useState([defaultTask]);
   const [showAddModal, setShowAddModal] = useState(false);
+  const [taskUpdate, setTaskUpdate] = useState();
 
   // Add Task Handler
   const handleAddTask = (newTask) => {
@@ -25,13 +26,16 @@ export default function TaskBoard() {
   };
 
   // Handle Edit Task
-  const handleEditTask = (newTask) => {
-    console.log(newTask);
+  const handleEditTask = (editTask) => {
+    setTaskUpdate(editTask);
+    setShowAddModal(true);
   };
 
   return (
     <section className="mb-20" id="tasks">
-      {showAddModal && <AddTaskModal onSave={handleAddTask} />}
+      {showAddModal && (
+        <AddTaskModal onSave={handleAddTask} taskUpdate={taskUpdate} />
+      )}
       <div className="container mx-auto">
         <SearchBox />
         <div className="rounded-xl border border-[rgba(206,206,206,0.12)] bg-[#1D212B] px-6 py-8 md:px-9 md:py-16">
