@@ -64,6 +64,14 @@ export default function TaskBoard() {
     setTasks(newTask);
   };
 
+  // Handle Search
+  const handleSearch = (searchTerm) => {
+    const filtered = tasks.filter((task) =>
+      task.title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
+    );
+    setTasks([...filtered]);
+  };
+
   return (
     <section className="mb-20" id="tasks">
       {showAddModal && (
@@ -74,7 +82,7 @@ export default function TaskBoard() {
         />
       )}
       <div className="container mx-auto">
-        <SearchBox />
+        <SearchBox onSearch={handleSearch} />
         <div className="rounded-xl border border-[rgba(206,206,206,0.12)] bg-[#1D212B] px-6 py-8 md:px-9 md:py-16">
           <TaskAction
             onAddClick={() => setShowAddModal(true)}
